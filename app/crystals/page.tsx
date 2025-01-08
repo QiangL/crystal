@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { crystals } from '../data/crystals';
 import { motion } from 'framer-motion';
+import Image from 'next/image'
 
 export default function CrystalsPage() {
   const [selectedCrystal, setSelectedCrystal] = useState(crystals[0]);
@@ -87,10 +88,11 @@ export default function CrystalsPage() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden"
             >
               <div className="relative h-64 md:h-96">
-                <img
-                  src={selectedCrystal.image}
+                <Image 
+                  src={selectedCrystal.image} 
                   alt={selectedCrystal.name}
-                  className="absolute w-full h-full object-cover"
+                  width={500}
+                  height={300}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <h2 className="absolute bottom-6 left-6 text-3xl font-bold text-white">

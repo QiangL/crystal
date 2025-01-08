@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { crystals } from './data/crystals';
+import Image from 'next/image';
 
 export default function HomePage() {
   return (
@@ -35,10 +36,11 @@ export default function HomePage() {
           {crystals.map((crystal) => (
             <div key={crystal.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
               <div className="aspect-w-16 aspect-h-9">
-                <img
-                  src={crystal.image}
+                <Image 
+                  src={crystal.image} 
                   alt={crystal.name}
-                  className="object-cover w-full h-48"
+                  width={500}  // 根据实际需要设置宽度
+                  height={300} // 根据实际需要设置高度
                 />
               </div>
               <div className="p-6">

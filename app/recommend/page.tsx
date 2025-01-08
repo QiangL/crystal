@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { crystals } from '../data/crystals';
 import type { Crystal, Mood, ZodiacSign, Intention } from '../types/crystal';
+import Image from 'next/image';
 
 export default function RecommendPage() {
   const [zodiacSign, setZodiacSign] = useState<ZodiacSign | ''>('');
@@ -212,10 +213,11 @@ export default function RecommendPage() {
                       <div className="flex">
                         <div className="w-1/3">
                           <div className="relative h-full">
-                            <img
-                              src={crystal.image}
+                            <Image 
+                              src={crystal.image} 
                               alt={crystal.name}
-                              className="absolute w-full h-full object-cover"
+                              width={500}  // 根据实际需要设置宽度
+                              height={300} // 根据实际需要设置高度
                             />
                           </div>
                         </div>
